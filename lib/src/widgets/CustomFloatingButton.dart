@@ -1,5 +1,6 @@
+// ignore_for_file: file_names, unused_local_variable
+
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class CustomFloatingButton extends StatelessWidget {
   const CustomFloatingButton({super.key});
@@ -8,9 +9,9 @@ class CustomFloatingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () async {
-        String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-            '#3D8BEF', 'Cancelar', false, ScanMode.QR);
-        print(barcodeScanRes);
+        // String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
+        //     '#3D8BEF', 'Cancelar', false, ScanMode.QR);
+        const barcodeScanRes = "https://briefcase-erickmilan.vercel.app";
       },
       child: const Icon(Icons.filter_center_focus),
     );

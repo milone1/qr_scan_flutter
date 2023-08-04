@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qr_scan_flutter/src/provider/Stateproviders.dart';
+import 'package:qr_scan_flutter/src/provider/Stateprovider.dart';
 import 'package:qr_scan_flutter/src/screens/HomeScreen.dart';
 import 'package:qr_scan_flutter/src/screens/MapScreen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
           initialRoute: 'home',
           routes: {
             'home': (_) => const HomeScreen(),
-            'map': (_) => MapScreen()
+            'map': (_) => const MapScreen()
           },
           theme: ThemeData.dark()),
     );

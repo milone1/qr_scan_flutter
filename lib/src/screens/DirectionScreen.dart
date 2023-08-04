@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class DirectionScreen extends StatelessWidget {
@@ -5,8 +7,6 @@ class DirectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Direcciones"),
-    );
+    return const Center(child: Text("Direcciones Screen"));
   }
 }
