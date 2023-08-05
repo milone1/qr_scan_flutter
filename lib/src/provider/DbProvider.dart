@@ -25,7 +25,7 @@ class DBProvider {
     // path of tha database
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     final path = join(documentDirectory.path, 'ScansDB.db');
-
+    print('path: ' + path);
     return await openDatabase(path, version: 1, onOpen: (db) {},
         onCreate: (Database db, int version) async {
       await db.execute(''' CREATE TABLE Scans(
@@ -62,18 +62,19 @@ class DBProvider {
     return res.isNotEmpty ? ScanModel.fromJson(res.first) : null;
   }
 
-  Future<List<ScanModel>?> getAllScans(int id) async {
+  Future<List<ScanModel>> getAllScans() async {
     final db = await database;
     final res = await db.query('Scans');
 
     return res.isNotEmpty ? res.map((e) => ScanModel.fromJson(e)).toList() : [];
   }
 
-  Future<List<ScanModel>?> getScansType(String type) async {
+  Future<List<ScanModel>> getScansType(ScanType type) async {
     final db = await database;
-    final res = await db.rawQuery('''
-      Select * from Scans where type = '$type'
- ''');
+    final typeString = type.toString();
+
+    final res = await db.query('Scans',
+        where: 'type = ?', whereArgs: [typeString.split('.').last]);
 
     return res.isNotEmpty ? res.map((e) => ScanModel.fromJson(e)).toList() : [];
   }
@@ -95,7 +96,7 @@ class DBProvider {
   Future<int> deleteAllScans() async {
     final db = await database;
     final res = await db.rawDelete(''' 
-    delete form Scans
+    delete from Scans
     ''');
     return res;
   }

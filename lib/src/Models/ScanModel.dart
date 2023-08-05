@@ -1,42 +1,38 @@
-// import 'package:google_maps_flutter/google_maps_flutter.dart' show LatLng;
+import 'package:google_maps_flutter/google_maps_flutter.dart' show LatLng;
 
-// ignore_for_file: file_names
+enum ScanType {
+  https,
+  geo,
+}
 
 class ScanModel {
   ScanModel({
-    id,
-    type,
-    required value,
-  }) {
-    if (this.value.contains('http')) {
-      this.type = 'http';
-    } else {
-      this.type = 'geo';
-    }
+    int? id, // Add appropriate data types for 'id'.
+    this.type = ScanType.https, // Set default value to 'https'.
+    required this.value,
+  }) : id = id;
+
+  int? id;
+  ScanType type;
+  String value;
+
+  LatLng getLatLg() {
+    final latLng = this.value.substring(4).split(',');
+    final lat = double.parse(latLng[0]);
+    final lng = double.parse(latLng[1]);
+
+    return LatLng(lat, lng);
   }
-
-  late int id;
-  late String type;
-  late String value;
-
-  // LatLng getLatLng() {
-
-  //   final latLng = this.valor.substring(4).split(',');
-  //   final lat = double.parse( latLng[0] );
-  //   final lng = double.parse( latLng[1] );
-
-  //   return LatLng( lat, lng );
-  // }
 
   factory ScanModel.fromJson(Map<String, dynamic> json) => ScanModel(
         id: json["id"],
-        type: json["type"],
+        type: json["type"] == "https" ? ScanType.https : ScanType.geo,
         value: json["value"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "type": type,
+        "type": type == ScanType.https ? "https" : "geo",
         "value": value,
       };
 }
