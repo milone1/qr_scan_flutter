@@ -1,26 +1,27 @@
 # Nombre del Proyecto
 
-[Descripción del proyecto en una línea]
+QR-Scan-Lite 0.1
 
 ## Descripción
 
-[Una descripción más detallada del proyecto y su objetivo.]
+La aplicación se enfoca en la simplicidad y usabilidad, con una interfaz intuitiva que facilita el proceso de escaneo. Además, está optimizada para funcionar en diferentes dispositivos y tamaños de pantalla, lo que garantiza una experiencia consistente en teléfonos inteligentes y tabletas.
 
 ## Capturas de Pantalla
 
 ![Captura de Pantalla 1](https://images.pexels.com/photos/8372665/pexels-photo-8372665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
-![Captura de Pantalla 2](https://images.pexels.com/photos/8372635/pexels-photo-8372635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
 
 ## Características
 
-- [Característica 1]
-- [Característica 2]
-- [Característica 3]
+- Compatibilidad con Plataformas.
+- Decodificación de Contenido.
+- Soporte para Varios Tipos de Códigos QR.
+- Escaneo Rápido y Preciso.
 
 ## Tecnologías Utilizadas
 
 - Flutter
-- [Otras tecnologías utilizadas, si corresponde]
+- SQLite
+- Provider
 
 ## Instalación
 
@@ -39,9 +40,20 @@ Contribuciones son bienvenidas. Por favor, sigue estos pasos:
 
 ## Licencia
 
-[Indica la licencia bajo la cual se publica el proyecto, por ejemplo, MIT License]
+Copyright 2023 Milone1
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
 ## Contacto
 
-[Indica cómo pueden contactarte en caso de preguntas o problemas con el proyecto.]
-
+https://briefcase-erickmilan.vercel.app
