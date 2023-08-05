@@ -1,7 +1,4 @@
-# Nombre del Proyecto
-
-QR-Scan-Lite 0.1
-
+# QR-Scan-Lite 0.1
 ## Descripción
 
 La aplicación se enfoca en la simplicidad y usabilidad, con una interfaz intuitiva que facilita el proceso de escaneo. Además, está optimizada para funcionar en diferentes dispositivos y tamaños de pantalla, lo que garantiza una experiencia consistente en teléfonos inteligentes y tabletas.
