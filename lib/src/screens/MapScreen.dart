@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -12,7 +14,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
   MapType mapType = MapType.normal;
   @override
   Widget build(BuildContext context) {
@@ -25,10 +27,11 @@ class _MapScreenState extends State<MapScreen> {
     );
 
     // Marcadores
-    Set<Marker> markers = new Set<Marker>();
+    Set<Marker> markers = <Marker>{};
 
     markers.add(
-      new Marker(markerId: MarkerId('geo-location'), position: scan.getLatLg()),
+      Marker(
+          markerId: const MarkerId('geo-location'), position: scan.getLatLg()),
     );
 
     return Scaffold(
